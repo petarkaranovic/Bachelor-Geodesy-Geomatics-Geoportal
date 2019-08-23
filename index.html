@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/ol.css">
+    <link rel="stylesheet" href="css/stil.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="stylesheet" href="css/checkbutton.css">
+    <link rel="stylesheet" href="css/table.css">
+    <title>Geoportal</title>
+</head>
+
+<body>
+    <div id="map_container">
+        <div id="map" class="map" style="height: 740px" ></div>
+        <!-- 100vh -->
+    </div>
+
+    <div id="menu">
+        <button class="dropdown-btn" >Podloga
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+
+            <label class="button_container" style="margin-top: 12px">Open Street Map
+    <input id="osm" type="checkbox">
+    <span class="checkmark"></span>
+</label>
+
+            <label class="button_container" style="margin-top: 12px">Bing Areal With Labels
+    <input id="bing_aerial_with_labels" type="checkbox">
+    <span class="checkmark"></span>
+</label>
+
+            <label class="button_container" style="margin-top: 12px">Bing Areal
+    <input id="bing_aerial" type="checkbox">
+    <span class="checkmark"></span>
+</label>
+
+            <label class="button_container" style="margin-top: 12px">Bing Road
+    <input id="bing_road" type="checkbox">
+    <span class="checkmark"></span>
+</label>
+
+        </div>
+
+        <button class="dropdown-btn">Lejeri
+            <i class="fa fa-caret-down"></i>
+        </button>
+
+        <div class="dropdown-container">
+
+            <label class="button_container" style="margin-top: 12px">Putevi
+                <input id="roads" type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="button_container">Pruge
+                <input id="rails" type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="button_container">Reke
+                <input id="rivers" type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="button_container">Opstine
+                <input id="municipalities" type="checkbox">
+                <span class="checkmark"></span>
+            <span><select id='opstina' style="visibility: hidden;">
+                    <option value=0>Vlasotince</option>
+                    <option value=1>Pirot</option>
+                    <option value=2>Bela Palanka</option>
+                    <option value=3>Niska Banja</option>
+                    <option value=4>Knjazevac</option>
+                    <option value=5>Negotin</option>
+                    <option value=6>Zajecar</option>
+                    <option value=7>Kladovo</option>
+                    <option value=8>Trgoviste</option>
+                    <option value=9>Bosilegrad</option>
+                    <option value=10>Surdulica</option>
+                    <option value=11>Leskovac</option>
+                    <option value=12>Crna Trava</option>
+                    <option value=13>Dimitrovgrad</option>
+                    <option value=14>Babusnica</option>
+                    <option value=15>Vladicin Han</option>
+                    <option value=16>Aleksinac</option>
+                    <option value=17>Sokobanja</option>
+                    <option value=18>Bor</option>
+                    <option value=19>Boljevac</option>
+                    <option value=20>Zagubica</option>
+                    <option value=21>Majdanpek</option>
+                    <option value=22>Kucevo</option>
+                    <option value=23>Golubac</option>
+                    <option value=24>Zitoradja</option>
+                    <option value=25>Doljevac</option>
+                    <option value=26>Palilula</option>
+                    <option value=27>Merosina</option>
+                    <option value=28>Pantelej</option>
+                    <option value=29>Crveni Krst</option>
+                    <option value=30>Svrljig</option>
+                    <option value=31>Mediana</option>
+                    <option value=32>Presevo</option>
+                    <option value=33>Bujanovac</option>
+                    <option value=34>Vranje</option>
+                    <option value=35>Vladicin Han</option>
+                    <option value=36>Lebane</option>
+                    <option value=37>Leskovac</option>
+                    <option value=38>Bojnik</option>
+                    <option value=39>Gadzin Han</option>
+                    <option value=40>Despotovac</option>
+                    <option value=41>Svilajnac</option>
+                    <option value=42>Petrovac</option>
+                    <option value=43>Zabari</option>
+                    <option value=44>Bela Crkva</option>
+                    <option value=45>Malo Crnice</option>
+                    <option value=46>Vrsac</option>
+                    <option value=47>Veliko Gradiste</option>
+                    <option value=48>Blace</option>
+                    <option value=49>Razanj</option>
+                    <option value=50>Paracin</option>
+                    <option value=51>Cicevac</option>
+                    <option value=52>Varvarin</option>
+                    <option value=53>Krusevac</option>
+                    <option value=54>Jagodina</option>
+                    <option value=55>Cuprija</option>
+                    <option value=56>Kacanik</option>
+                    <option value=57>Kosovska Kamenica</option>
+                    <option value=58>Vitina</option>
+                    <option value=59>Gnjilane</option>
+                    <option value=60>Novo Brdo</option>
+                    <option value=61>Pristina</option>
+                    <option value=62>Medvedja</option>
+                    <option value=63>Prokuplje</option>
+                    <option value=64>Secanj</option>
+                    <option value=65>Nova Crnja</option>
+                    <option value=66>Zvezdara</option>
+                    <option value=67>Savski Venac</option>
+                    <option value=68>Alibunar</option>
+                    <option value=69>Stari Grad</option>
+                    <option value=70>Kovacica</option>
+                    <option value=71>Vracar</option>
+                    <option value=72>Opovo</option>
+                    <option value=73>Plandiste</option>
+                    <option value=74>Sopot</option>
+                    <option value=75>Smederevo</option>
+                    <option value=76>Pozarevac</option>
+                    <option value=77>Grocka</option>
+                    <option value=78>Vozdovac</option>
+                    <option value=79>Kovin</option>
+                    <option value=80>Pancevo</option>
+                    <option value=81>Rakovica</option>
+                    <option value=82>Novi Becej</option>
+                    <option value=83>Becej</option>
+                    <option value=84>Kikinda</option>
+                    <option value=85>Ada</option>
+                    <option value=86>Kanjiza</option>
+                    <option value=87>Senta</option>
+                    <option value=88>Coka</option>
+                    <option value=89>Novi Knezevac</option>
+                    <option value=90>Zemun</option>
+                    <option value=91>Stara Pazova</option>
+                    <option value=92>Titel</option>
+                    <option value=93>Zabalj</option>
+                    <option value=94>Indjija</option>
+                    <option value=95>Zrenjanin</option>
+                    <option value=96>Sremski Karlovci</option>
+                    <option value=97>Zitiste</option>
+                    <option value=98>Surcin</option>
+                    <option value=99>Obrenovac</option>
+                    <option value=100>Cukarica</option>
+                    <option value=101>Ub</option>
+                    <option value=102>Barajevo</option>
+                    <option value=103>Pecinci</option>
+                    <option value=104>Novi Beograd</option>
+                    <option value=105>Palilula</option>
+                    <option value=106>Odzaci</option>
+                    <option value=107>Mali Idjos</option>
+                    <option value=108>Subotica</option>
+                    <option value=109>Sombor</option>
+                    <option value=110>Srbobran</option>
+                    <option value=111>Backa Topola</option>
+                    <option value=112>Kula</option>
+                    <option value=113>Apatin</option>
+                    <option value=114>Irig</option>
+                    <option value=115>Beocin</option>
+                    <option value=116>Backa Palanka</option>
+                    <option value=117>Novi Sad</option>
+                    <option value=118>Vrbas</option>
+                    <option value=119>Backi Petrovac</option>
+                    <option value=120>Bac</option>
+                    <option value=121>Temerin</option>
+                    <option value=122>Loznica</option>
+                    <option value=123>Koceljeva</option>
+                    <option value=124>Sabac</option>
+                    <option value=125>Vladimirci</option>
+                    <option value=126>Ruma</option>
+                    <option value=127>Bogatic</option>
+                    <option value=128>Sid</option>
+                    <option value=129>Sremska Mitrovica</option>
+                    <option value=130>Lapovo</option>
+                    <option value=131>Velika Plana</option>
+                    <option value=132>Podujevo</option>
+                    <option value=133>Kursumlija</option>
+                    <option value=134>Brus</option>
+                    <option value=135>Aleksandrovac</option>
+                    <option value=136>Trstenik</option>
+                    <option value=137>Rekovac</option>
+                    <option value=138>Batocina</option>
+                    <option value=139>Raca</option>
+                    <option value=140>Strpce</option>
+                    <option value=141>Glogovac</option>
+                    <option value=142>Urosevac</option>
+                    <option value=143>Kosovo Polje</option>
+                    <option value=144>Stimlje</option>
+                    <option value=145>Lipljan</option>
+                    <option value=146>Obilic</option>
+                    <option value=147>Vucitrn</option>
+                    <option value=148>Knic</option>
+                    <option value=149>Kragujevac</option>
+                    <option value=150>Ljig</option>
+                    <option value=151>Mladenovac</option>
+                    <option value=152>Topola</option>
+                    <option value=153>Arandjelovac</option>
+                    <option value=154>Lazarevac</option>
+                    <option value=155>Smederevska Palanka</option>
+                    <option value=156>Zubin Potok</option>
+                    <option value=157>Kosovska Mitrovica</option>
+                    <option value=158>Zvecan</option>
+                    <option value=159>Novi Pazar</option>
+                    <option value=160>Raska</option>
+                    <option value=161>Leposavic</option>
+                    <option value=162>Kraljevo</option>
+                    <option value=163>Vrnjacka Banja</option>
+                    <option value=164>Orahovac</option>
+                    <option value=165>Suva Reka</option>
+                    <option value=166>Prizren</option>
+                    <option value=167>Djakovica</option>
+                    <option value=168>Gora</option>
+                    <option value=169>Klina</option>
+                    <option value=170>Srbica</option>
+                    <option value=171>Istok</option>
+                    <option value=172>Kosjeric</option>
+                    <option value=173>Valjevo</option>
+                    <option value=174>Mionica</option>
+                    <option value=175>Krupanj</option>
+                    <option value=176>Mali Zvornik</option>
+                    <option value=177>Osecina</option>
+                    <option value=178>Ljubovija</option>
+                    <option value=179>Lajkovac</option>
+                    <option value=180>Cajetina</option>
+                    <option value=181>Arilje</option>
+                    <option value=182>Lucani</option>
+                    <option value=183>Pozega</option>
+                    <option value=184>Uzice</option>
+                    <option value=185>Bajina Basta</option>
+                    <option value=186>Cacak</option>
+                    <option value=187>Gornji Milanovac</option>
+                    <option value=188>Pec</option>
+                    <option value=189>Nova Varos</option>
+                    <option value=190>Prijepolje</option>
+                    <option value=191>Sjenica</option>
+                    <option value=192>Ivanjica</option>
+                    <option value=193>Tutin</option>
+                    <option value=194>Decani</option>
+                    <option value=195>Priboj</option>
+
+                </select>
+
+                </span>
+            </label>
+            <label class="button_container">Okruzi
+                <input id="counties" type="checkbox" >
+                <span class="checkmark"></span>
+                
+            </label>
+            <table id="tabla_opstina">
+                <tr>
+                    <th>Naziv</th>
+                    <th>Broj stanovnika</th>
+                    <th>Povrsina</th>
+                </tr>
+
+            </table>
+            <div id="container" style="min-width: 310px; height: 320px; max-width: 600px; margin: 0 auto"></div>
+
+        </div>
+
+        <div id='measure'>
+            <form class="form-inline">
+                <label>Tip merenja &nbsp;</label>
+                <select id="type">
+              <option value="length">Duzina</option>
+              <option value="area">Povrsina</option>
+            </select>
+            </form>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="js/ol.js"></script>
+    <script src="js/mapa.js"></script>
+    <script src="js/drop_down.js"></script>
+
+</body>
+
+</html>

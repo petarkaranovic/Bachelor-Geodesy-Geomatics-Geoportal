@@ -1,0 +1,36 @@
+body {
+    margin: 0px;
+}
+
+#map_container {
+    width: 70%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    float: right;
+}
+
+#menu {
+    width: 30%;
+    height: 100%;
+}
+
+#measure {
+    align-content: center;
+    border: solid 0px 1px black;
+    padding: 5px;
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    font-family: myfont;
+    font-size: 18px;
+}
+
+#opstina {
+    width: 90px;
+}
+
+th,
+td {
+    font-size: 14px;
+}

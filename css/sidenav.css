@@ -1,0 +1,56 @@
+.sidenav a,
+.dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    border: none;
+    /* background-color: green; */
+    background-color: grey;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    border-bottom: 1px solid black;
+    font-family: myfont;
+    font-weight: bold;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+/* On mouse-over */
+
+.sidenav a:hover,
+.dropdown-btn:hover {
+    color: white;
+    background-color: rgb(182, 180, 180);
+}
+
+
+/* Add an active class to the active dropdown button */
+
+.active {
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    font-family: myfont;
+}
+
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+
+.dropdown-container {
+    display: none;
+    width: auto;
+    background-color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(207, 228, 243);
+    padding-left: 8px;
+    background-color: rgba(135, 139, 134, 0.452);
+    /* background-color: rgba(62, 216, 24, 0.452); */
+    border-bottom: 5px solid rgba(207, 228, 243, 0.452);
+    
+}
